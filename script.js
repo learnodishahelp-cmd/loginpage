@@ -2,7 +2,7 @@ function submitForm() {
     const name = document.getElementById("name").value;
     const mobile = document.getElementById("mobile").value;
 
-    fetch("https://mkn8n.app.n8n.cloud/webhook-test/register", {
+    fetch("https://mkn8n.app.n8n.cloud/webhook/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
