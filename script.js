@@ -11,10 +11,10 @@ function submitForm() {
     localStorage.setItem("name", name);
     localStorage.setItem("mobile", mobile);
 
-    /*
-    Later connect n8n webhook here
+    
+    
 
-    fetch("YOUR_N8N_WEBHOOK_URL", {
+    fetch("https://mkn8n.app.n8n.cloud/webhook-test/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -24,7 +24,7 @@ function submitForm() {
             mobile
         })
     });
-    */
+    
 
     window.location.href = "dashboard.html";
 }
