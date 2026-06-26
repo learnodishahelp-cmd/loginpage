@@ -1,28 +1,34 @@
-function submitForm() {
-    const name = document.getElementById("name").value;
-    const mobile = document.getElementById("mobile").value;
+document.querySelector("form").addEventListener("submit", async (e)=>{
+  e.preventDefault();
 
-    fetch("https://cloud.activepieces.com/api/v1/webhooks/A3fmDh7ifefHXjW4Xc2Qx", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name,
-            mobile
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
+  const name = document.querySelector("#name").value;
+  const mobile = document.querySelector("#mobile").value;
 
-        localStorage.setItem("name", name);
-        localStorage.setItem("mobile", mobile);
+  try {
 
-        window.location.href = "dashboard.html";
-    })
-    .catch(error => {
-        console.error(error);
-        alert("Error submitting form");
+    const response = await fetch("YOUR_LIVE_URL_HERE", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        mobile: mobile
+      })
     });
-}
+
+    const result = await response.text();
+
+    if(response.ok){
+      alert("Form submitted successfully");
+    }
+    else{
+      alert("Server error: " + result);
+    }
+
+  } catch(error){
+    alert("Form submitting error");
+    console.log(error);
+  }
+
+});
