@@ -2,7 +2,7 @@ function submitForm() {
     const name = document.getElementById("name").value;
     const mobile = document.getElementById("mobile").value;
 
-    fetch("https://mkn8n.app.n8n.cloud/webhook-test/register", {
+    fetch("https://cloud.activepieces.com/api/v1/webhooks/A3fmDh7ifefHXjW4Xc2Qx", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
