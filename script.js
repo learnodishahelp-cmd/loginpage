@@ -6,7 +6,7 @@ document.querySelector("form").addEventListener("submit", async (e)=>{
 
   try {
 
-    const response = await fetch("YOUR_LIVE_URL_HERE", {
+    const response = await fetch("https://cloud.activepieces.com/api/v1/webhooks/A3fmDh7ifefHXjW4Xc2Qx", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
